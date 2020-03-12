@@ -35,7 +35,7 @@
 <!--The following javscript runs the jquery slideshow -->
 <script type="text/javascript">
 $('#slider').cycle({});
-</script>
+</script>  
 
 <!--The following javascript runs the nav bar which disappears on scroll-->
 <script type="text/javascript">
@@ -110,8 +110,9 @@ function topFunction() {
 </script>   
 </head>
 
-<body>
+<body>  
 
+    
 <!--beginning of navigation section-->
 <header>
 <div class="nav-container">
@@ -137,6 +138,7 @@ function topFunction() {
       </ul>
 </nav>
 </div>
+    
 <!--closing navigation tag-->
 </header>
 <!--end of navigation section-->
@@ -144,9 +146,18 @@ function topFunction() {
 <!--main image-->
 <div class="container">
 </div>
-    
 <!--animated welcome-->
 <div class="wrapper">
+    
+    <div class="switch-container">
+  <div id="boo" class="hide">
+    Dark Mode
+  </div>
+<label class="switch">
+  <input id="toggle" ontoggle="myFunction()"  type="checkbox" />
+  <div class="slider round"><div><div class="ghost" /></div></div>
+</label>
+</div>
 <!--animated welcome code here-->	
 </div>
 
@@ -197,7 +208,9 @@ data-cycle-speed="200">
 </article><!--end of article-->
 </div><!--end of row-->
 <!--end of slideshow section-->
-	
+<!-------------------------------TESTING---------------------------------------------->
+    
+    
 <!--beginning of audio section-->
 <div class="row whiteBG">
 <h2 id="tl"><span class="GFText">Meet the</span>&nbsp;<span class="GF2Text">Returners!</span></h2>
@@ -260,7 +273,7 @@ Your browser does not support the video tag.
 <!--end of infographic section-->
 	
 <!--beginning of footer-->
-<footer>Site Name Here | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 20__ | Site by You 
+<footer>Road to PCN | San Luis Obispo, CA | <a href="mailto: cileyva@calpoly.edu?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2020 | Site by Cinthia Leyva | im tired
 </footer>
 <!--end of footer-->
 	
@@ -319,6 +332,31 @@ document.addEventListener('play', function(e){
     }
 }, true);
     </script>
+    
+    <script>
+    document.getElementById("toggle").addEventListener("click", changeColor);
 
+isClicked = true;
+
+function changeColor() {
+  if (isClicked) {
+    document.getElementById("boo").classList.remove("hide");
+    document.getElementById("boo").classList.add("show");
+       var element = document.body;
+   element.classList.toggle("dark-mode");
+    isClicked = false;
+  } 
+    else {
+    document.getElementById("boo").classList.remove("show");
+    document.getElementById("boo").classList.add("hide");
+            var element = document.body;
+          element.classList.toggle("dark-mode");
+        
+    isClicked = true;
+     
+  }  
+}
+ 
+    </script>
 
 </html>
